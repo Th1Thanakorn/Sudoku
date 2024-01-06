@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2px;
+}
+
+.cell {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.cell[readonly] {
+    background-color: #eee;
+}
