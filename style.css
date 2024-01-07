@@ -9,8 +9,9 @@ body {
 
 .board {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(9, 45px);
     gap: 2px;
+    position: relative;
 }
 
 .cell {
@@ -23,6 +24,33 @@ body {
     border: 1px solid #ccc;
 }
 
+.horizontal-line {
+    grid-column: span 9;
+    height: 2px;
+    background-color: #000;
+}
+
 .cell[readonly] {
     background-color: #eee;
+}
+
+.cell:nth-child(3n):nth-child(-n+27):not(:nth-child(9n)),
+.cell:nth-child(n+27):nth-child(3n+1):nth-child(-n+55):not(:nth-child(9n+1)),
+.cell:nth-child(n+56):nth-child(3n+2):nth-child(-n+83):not(:nth-child(9n+2)) {
+    border-right: 2px solid #000;
+}
+
+.button-container {
+    grid-column: span 9;
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    width: 100px;
+    padding: 8px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
 }
